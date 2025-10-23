@@ -16,7 +16,7 @@
         label = "HOMEROW_MODS";
         #binding-cells = <2>;
         tapping-term-ms = <200>;
-        quick_tap_ms = <175>;
+        // quick_tap_ms = <175>;  // deprecated
         flavor = "tap-preferred";
         bindings = <&kp>, <&kp>;
     };
@@ -24,37 +24,43 @@
     // === Top row left (positions 1–6): $ & { ( [ =  with Shift: ~ 7 5 3 1 0 ===
     sm_dollar_tilde: sm_dollar_tilde {
       compatible = "zmk,behavior-mod-morph";
-      label = "SM_$~";
+      #binding-cells = <0>;
+      // label = "SM_$~";
       bindings = <&kp DOLLAR>, <&kp TILDE>;
       mods = <(MOD_LSFT|MOD_RSFT)>;
     };
     sm_amp_7: sm_amp_7 {
       compatible = "zmk,behavior-mod-morph";
-      label = "SM_&7";
+      #binding-cells = <0>;
+      // label = "SM_&7";
       bindings = <&kp AMPERSAND>, <&kp N7>;
       mods = <(MOD_LSFT|MOD_RSFT)>;
     };
     sm_lbrace_5: sm_lbrace_5 {
       compatible = "zmk,behavior-mod-morph";
-      label = "SM_{5";
+      #binding-cells = <0>;
+      // label = "SM_{5";
       bindings = <&kp LEFT_BRACE>, <&kp N5>;
       mods = <(MOD_LSFT|MOD_RSFT)>;
     };
     sm_lparen_3: sm_lparen_3 {
       compatible = "zmk,behavior-mod-morph";
-      label = "SM_(3";
+      #binding-cells = <0>;
+      // label = "SM_(3";
       bindings = <&kp LEFT_PARENTHESIS>, <&kp N3>;
       mods = <(MOD_LSFT|MOD_RSFT)>;
     };
     sm_lbracket_1: sm_lbracket_1 {
       compatible = "zmk,behavior-mod-morph";
-      label = "SM_[1";
+      #binding-cells = <0>;
+      // label = "SM_[1";
       bindings = <&kp LEFT_BRACKET>, <&kp N1>;
       mods = <(MOD_LSFT|MOD_RSFT)>;
     };
     sm_equal_0: sm_equal_0 {
       compatible = "zmk,behavior-mod-morph";
-      label = "SM_=0";
+      #binding-cells = <0>;
+      // label = "SM_=0";
       bindings = <&kp EQUAL>, <&kp N0>;
       mods = <(MOD_LSFT|MOD_RSFT)>;
     };
@@ -62,31 +68,36 @@
     // === Top row right (positions 7–12): + ] ) } % \  with Shift: 9 2 4 6 8 | ===
     sm_plus_9: sm_plus_9 {
       compatible = "zmk,behavior-mod-morph";
-      label = "SM_+9";
+      #binding-cells = <0>;
+      // label = "SM_+9";
       bindings = <&kp PLUS>, <&kp N9>;
       mods = <(MOD_LSFT|MOD_RSFT)>;
     };
     sm_rbracket_2: sm_rbracket_2 {
       compatible = "zmk,behavior-mod-morph";
-      label = "SM_]2";
+      #binding-cells = <0>;
+      // label = "SM_]2";
       bindings = <&kp RIGHT_BRACKET>, <&kp N2>;
       mods = <(MOD_LSFT|MOD_RSFT)>;
     };
     sm_rparen_4: sm_rparen_4 {
       compatible = "zmk,behavior-mod-morph";
-      label = "SM_)4";
+      #binding-cells = <0>;
+      // label = "SM_)4";
       bindings = <&kp RIGHT_PARENTHESIS>, <&kp N4>;
       mods = <(MOD_LSFT|MOD_RSFT)>;
     };
     sm_rbrace_6: sm_rbrace_6 {
       compatible = "zmk,behavior-mod-morph";
-      label = "SM_}6";
+      #binding-cells = <0>;
+      // label = "SM_}6";
       bindings = <&kp RIGHT_BRACE>, <&kp N6>;
       mods = <(MOD_LSFT|MOD_RSFT)>;
     };
     sm_percent_8: sm_percent_8 {
       compatible = "zmk,behavior-mod-morph";
-      label = "SM_%8";
+      #binding-cells = <0>;
+      // label = "SM_%8";
       bindings = <&kp PERCENT>, <&kp N8>;
       mods = <(MOD_LSFT|MOD_RSFT)>;
     };
@@ -95,7 +106,8 @@
     // .  -> <  (when Shift is held)
     sm_dot_lt: sm_dot_lt {
       compatible = "zmk,behavior-mod-morph";
-      label = "SM_.<";
+      #binding-cells = <0>;
+      // label = "SM_.<";
       bindings = <&kp DOT>, <&kp LESS_THAN>;
       mods = <(MOD_LSFT|MOD_RSFT)>;
     };
@@ -103,7 +115,8 @@
     // ,  -> >  (when Shift is held)
     sm_comma_gt: sm_comma_gt {
       compatible = "zmk,behavior-mod-morph";
-      label = "SM_,>";
+      #binding-cells = <0>;
+      // label = "SM_,>";
       bindings = <&kp COMMA>, <&kp GREATER_THAN>;
       mods = <(MOD_LSFT|MOD_RSFT)>;
     };
@@ -112,7 +125,8 @@
     //  *  -> `    (replacing ` -> ~)
     sm_ast_g: sm_asterisk_grave {
       compatible = "zmk,behavior-mod-morph";
-      label = "SM_*`";
+      #binding-cells = <0>;
+      // label = "SM_*`";
       bindings = <&kp ASTERISK>, <&kp GRAVE>;
       mods = <(MOD_LSFT|MOD_RSFT)>;
     };
@@ -122,13 +136,15 @@
     //  !  -> ^    (replacing ] -> })
     sm_hash_at: sm_hash_at {
       compatible = "zmk,behavior-mod-morph";
-      label = "SM_#@";
+      #binding-cells = <0>;
+      // label = "SM_#@";
       bindings = <&kp HASH>, <&kp AT>;
       mods = <(MOD_LSFT|MOD_RSFT)>;
     };
     sm_bang_caret: sm_bang_caret {
       compatible = "zmk,behavior-mod-morph";
-      label = "SM_!^";
+      #binding-cells = <0>;
+      // label = "SM_!^";
       bindings = <&kp EXCLAMATION>, <&kp CARET>;
       mods = <(MOD_LSFT|MOD_RSFT)>;
     };
