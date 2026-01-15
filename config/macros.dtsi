@@ -222,3 +222,48 @@
     bindings = <&mkp MB1 &mkp MB1>;
     display-name = "Double Click";
   };
+
+  // Unicode hex input macros (requires macOS Unicode Hex Input)
+  // Release any held Option first, then do Option+hex sequence
+  // å = U+00E5
+  uc_aa_ring: uc_aa_ring {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&macro_release &kp LALT &kp RALT>, <&macro_press &kp LALT>, <&macro_tap &kp N0 &kp N0 &kp E &kp N5>, <&macro_release &kp LALT>;
+    display-name = "å";
+  };
+  // Å = U+00C5
+  uc_aa_ring_upper: uc_aa_ring_upper {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&macro_release &kp LALT &kp RALT &kp LSFT &kp RSFT>, <&macro_press &kp LALT>, <&macro_tap &kp N0 &kp N0 &kp C &kp N5>, <&macro_release &kp LALT>;
+    display-name = "Å";
+  };
+  // ä = U+00E4
+  uc_ae_umlaut: uc_ae_umlaut {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&macro_release &kp LALT &kp RALT>, <&macro_press &kp LALT>, <&macro_tap &kp N0 &kp N0 &kp E &kp N4>, <&macro_release &kp LALT>;
+    display-name = "ä";
+  };
+  // Ä = U+00C4
+  uc_ae_umlaut_upper: uc_ae_umlaut_upper {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&macro_release &kp LALT &kp RALT &kp LSFT &kp RSFT>, <&macro_press &kp LALT>, <&macro_tap &kp N0 &kp N0 &kp C &kp N4>, <&macro_release &kp LALT>;
+    display-name = "Ä";
+  };
+  // ö = U+00F6
+  uc_oe_umlaut: uc_oe_umlaut {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&macro_release &kp LALT &kp RALT>, <&macro_press &kp LALT>, <&macro_tap &kp N0 &kp N0 &kp F &kp N6>, <&macro_release &kp LALT>;
+    display-name = "ö";
+  };
+  // Ö = U+00D6
+  uc_oe_umlaut_upper: uc_oe_umlaut_upper {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&macro_release &kp LALT &kp RALT &kp LSFT &kp RSFT>, <&macro_press &kp LALT>, <&macro_tap &kp N0 &kp N0 &kp D &kp N6>, <&macro_release &kp LALT>;
+    display-name = "Ö";
+  };

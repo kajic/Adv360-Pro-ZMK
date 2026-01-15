@@ -148,6 +148,54 @@
       bindings = <&kp EXCLAMATION>, <&kp CARET>;
       mods = <(MOD_LSFT|MOD_RSFT)>;
     };
+
+    // Unicode character: å / Å (Shift switches to uppercase)
+    sm_aa_ring: sm_aa_ring {
+      compatible = "zmk,behavior-mod-morph";
+      #binding-cells = <0>;
+      bindings = <&uc_aa_ring>, <&uc_aa_ring_upper>;
+      mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+
+    // A key with Option → å/Å
+    sm_a_aa: sm_a_aa {
+      compatible = "zmk,behavior-mod-morph";
+      #binding-cells = <0>;
+      bindings = <&kp A>, <&sm_aa_ring>;
+      mods = <(MOD_LALT|MOD_RALT)>;
+    };
+
+    // Unicode character: ä / Ä (Shift switches to uppercase)
+    sm_a_umlaut: sm_a_umlaut {
+      compatible = "zmk,behavior-mod-morph";
+      #binding-cells = <0>;
+      bindings = <&uc_ae_umlaut>, <&uc_ae_umlaut_upper>;
+      mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+
+    // E key with Option → ä/Ä
+    sm_e_ae: sm_e_ae {
+      compatible = "zmk,behavior-mod-morph";
+      #binding-cells = <0>;
+      bindings = <&kp E>, <&sm_a_umlaut>;
+      mods = <(MOD_LALT|MOD_RALT)>;
+    };
+
+    // Unicode character: ö / Ö (Shift switches to uppercase)
+    sm_o_umlaut: sm_o_umlaut {
+      compatible = "zmk,behavior-mod-morph";
+      #binding-cells = <0>;
+      bindings = <&uc_oe_umlaut>, <&uc_oe_umlaut_upper>;
+      mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+
+    // O key with Option → ö/Ö
+    sm_o_oe: sm_o_oe {
+      compatible = "zmk,behavior-mod-morph";
+      #binding-cells = <0>;
+      bindings = <&kp O>, <&sm_o_umlaut>;
+      mods = <(MOD_LALT|MOD_RALT)>;
+    };
   };
 
   keymap {
@@ -165,8 +213,8 @@
         &kp TAB          &kp Q     &kp W        &kp F        &kp P          &kp B       &none                                                            &none &kp J      &kp L          &kp U        &kp Y        &kp SEMI       &kp SLASH
         
         // Row 3
-        // Esc           aA        rR           sS           tT             gG          (2)            Ctrl      Command   Alt      Ctrl                 (4)   mM         nN             eE           iI           oO             -_
-        &kp ESC          &kp A     &kp R        &kp S        &kp T          &kp G       &none          &kp LCTRL &kp LGUI  &kp LALT &kp RCTRL            &none &kp M      &kp N          &kp E        &kp I        &kp O          &kp MINUS
+        // Esc           aåA        rR           sS           tT             gG          (2)            Ctrl      Command   Alt      Ctrl                 (4)   mM         nN             eäE          iI           oöO            -_
+        &kp ESC          &sm_a_aa  &kp R        &kp S        &kp T          &kp G       &none          &kp LCTRL &kp LGUI  &kp LALT &kp RCTRL            &none &kp M      &kp N          &sm_e_ae     &kp I        &sm_o_oe       &kp MINUS
         
         // Row 4
         // Shift         xX        cC           dD           vV             zZ                                   Home      Page Up                             kK         hH             .<           ,>           '"
