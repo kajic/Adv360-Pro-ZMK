@@ -162,12 +162,6 @@
       bindings = <&kp DELETE>, <&kp ENTER>;
       mods = <(MOD_LSFT|MOD_RSFT)>;
     };
-    sm_enter_del: sm_enter_del {
-      compatible = "zmk,behavior-mod-morph";
-      #binding-cells = <0>;
-      bindings = <&kp ENTER>, <&kp DELETE>;
-      mods = <(MOD_LSFT|MOD_RSFT)>;
-    };
     sm_space_bspc: sm_space_bspc {
       compatible = "zmk,behavior-mod-morph";
       #binding-cells = <0>;
@@ -198,9 +192,9 @@
         // Shift         xX        cC           dD           vV             zZ                                            Home  Page Up                                          kK             hH           .<           ,>             '"
         &kp LSHFT        &kp X     &kp C        &kp D        &kp V          &kp Z                                     &kp HOME  &kp PG_UP                                        &kp K          &kp H        &sm_dot_lt   &sm_comma_gt   &kp SQT        &kp RSHFT
                                                                                                                                                              
-        // Row                                                                                                                            
-        // fn            *`        Caps         Left Arrow   Right Arrow                 Backsp/Spc     Delete/Ent         End  Page Dwn   Enter/Del      Space/Bspc                            Up Arrow     Down Arrow   #@             !^             fn
-        &mo 2            &sm_ast_g &kp CAPS     &kp LEFT     &kp RIGHT               &sm_bspc_space  &sm_del_enter     &kp END  &kp PG_DN  &sm_enter_del  &sm_space_bspc                        &kp UP       &kp DOWN     &sm_hash_at    &sm_bang_caret &mo 2
+        // Row
+        // fn            *`        Caps         Left Arrow   Right Arrow                 Backsp/Spc     Delete/Ent         End  Page Dwn   Enter          Space/Bspc                            Up Arrow     Down Arrow   #@             !^             fn
+        &mo 2            &sm_ast_g &kp CAPS     &kp LEFT     &kp RIGHT               &sm_bspc_space  &sm_del_enter     &kp END  &kp PG_DN  &kp ENTER      &sm_space_bspc                        &kp UP       &kp DOWN     &sm_hash_at    &sm_bang_caret &mo 2
       >;
     };
 
@@ -211,7 +205,7 @@
         &kp TAB   &kp Q     &kp W    &kp E    &kp R      &kp T  &none                                                             &none &kp Y  &kp KP_N7  &kp KP_N8    &kp KP_N9     &kp KP_MINUS    &kp BSLH
         &kp ESC   &kp A     &kp S    &kp D    &kp F      &kp G  &none           &kp LCTRL &kp LGUI  &kp LALT  &kp RCTRL           &none &kp H  &kp KP_N4  &kp KP_N5    &kp KP_N6     &kp KP_PLUS     &kp SQT
         &kp LSHFT &kp Z     &kp X    &kp C    &kp V      &kp B                            &kp HOME  &kp PG_UP                           &kp N  &kp KP_N1  &kp KP_N2    &kp KP_N3     &kp KP_ENTER    &kp RSHFT
-        &mo 2     &kp GRAVE &kp CAPS &kp LEFT &kp RIGHT                &sm_bspc_space &sm_del_enter &kp END &kp PG_DN &sm_enter_del &kp KP_N0    &kp UP     &kp DOWN     &kp KP_DOT    &kp RBKT        &mo 2
+        &mo 2     &kp GRAVE &kp CAPS &kp LEFT &kp RIGHT                &sm_bspc_space &sm_del_enter &kp END &kp PG_DN &kp ENTER     &kp KP_N0    &kp UP     &kp DOWN     &kp KP_DOT    &kp RBKT        &mo 2
       >;
     };
     fn {
