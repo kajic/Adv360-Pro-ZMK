@@ -148,6 +148,32 @@
       bindings = <&kp EXCLAMATION>, <&kp CARET>;
       mods = <(MOD_LSFT|MOD_RSFT)>;
     };
+
+    // Thumb keys: Shift swaps Backspace/Space and Delete/Enter
+    sm_bspc_space: sm_bspc_space {
+      compatible = "zmk,behavior-mod-morph";
+      #binding-cells = <0>;
+      bindings = <&kp BACKSPACE>, <&kp SPACE>;
+      mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+    sm_del_enter: sm_del_enter {
+      compatible = "zmk,behavior-mod-morph";
+      #binding-cells = <0>;
+      bindings = <&kp DELETE>, <&kp ENTER>;
+      mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+    sm_enter_del: sm_enter_del {
+      compatible = "zmk,behavior-mod-morph";
+      #binding-cells = <0>;
+      bindings = <&kp ENTER>, <&kp DELETE>;
+      mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+    sm_space_bspc: sm_space_bspc {
+      compatible = "zmk,behavior-mod-morph";
+      #binding-cells = <0>;
+      bindings = <&kp SPACE>, <&kp BACKSPACE>;
+      mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
   };
 
   keymap {
@@ -157,24 +183,24 @@
       display-name = "Base";
       bindings = <
         // Row 1
-        // $~            &7        {5           (3           [1             =0          kp                                                               Mod   +9         ]2             )4           }6           %8             \|
-        &sm_dollar_tilde &sm_amp_7 &sm_lbrace_5 &sm_lparen_3 &sm_lbracket_1 &sm_equal_0 &tog 1                                                           &mo 3 &sm_plus_9 &sm_rbracket_2 &sm_rparen_4 &sm_rbrace_6 &sm_percent_8  &kp BSLH
+        // $~            &7        {5           (3           [1             =0          kp                                                                      Mod   +9         ]2             )4           }6           %8             \|
+        &sm_dollar_tilde &sm_amp_7 &sm_lbrace_5 &sm_lparen_3 &sm_lbracket_1 &sm_equal_0 &tog 1                                                                  &mo 3 &sm_plus_9 &sm_rbracket_2 &sm_rparen_4 &sm_rbrace_6 &sm_percent_8  &kp BSLH
         
         // Row 2        
-        // Tab           qQ        wW           fF           pP             bB          (1)                                                              (3)   jJ         lL             uU           yY           ;:             /?  
-        &kp TAB          &kp Q     &kp W        &kp F        &kp P          &kp B       &none                                                            &none &kp J      &kp L          &kp U        &kp Y        &kp SEMI       &kp SLASH
+        // Tab           qQ        wW           fF           pP             bB          (1)                                                                     (3)   jJ         lL             uU           yY           ;:             /?  
+        &kp TAB          &kp Q     &kp W        &kp F        &kp P          &kp B       &none                                                                   &none &kp J      &kp L          &kp U        &kp Y        &kp SEMI       &kp SLASH
         
         // Row 3
-        // Esc           aA         rR           sS           tT             gG          (2)            Ctrl      Command   Alt      Ctrl                 (4)   mM         nN             eE           iI           oO             -_
-        &kp ESC          &kp A     &kp R        &kp S        &kp T          &kp G       &none          &kp LCTRL &kp LGUI  &kp LALT &kp RCTRL            &none &kp M      &kp N          &kp E        &kp I        &kp O          &kp MINUS
-        
-        // Row 4
-        // Shift         xX        cC           dD           vV             zZ                                   Home      Page Up                             kK         hH             .<           ,>           '"
-        &kp LSHFT        &kp X     &kp C        &kp D        &kp V          &kp Z                                &kp HOME  &kp PG_UP                           &kp K      &kp H          &sm_dot_lt   &sm_comma_gt &kp SQT        &kp RSHFT
-
-        // Row 5
-        // fn            *`        Caps         Left Arrow   Right Arrow                      Backsp   Delete    End       Page Dwn  Enter     Space                      Up Arrow       Down Arrow   #@           !^             fn
-        &mo 2            &sm_ast_g &kp CAPS     &kp LEFT     &kp RIGHT                        &kp BSPC &kp DEL   &kp END   &kp PG_DN &kp ENTER &kp SPACE                  &kp UP         &kp DOWN     &sm_hash_at  &sm_bang_caret &mo 2
+        // Esc           aA        rR           sS           tT             gG          (2)                    Ctrl    Command  Alt        Ctrl                 (4)   mM         nN             eE           iI           oO             -_
+        &kp ESC          &kp A     &kp R        &kp S        &kp T          &kp G       &none             &kp LCTRL   &kp LGUI  &kp LALT   &kp RCTRL            &none &kp M      &kp N          &kp E        &kp I        &kp O          &kp MINUS
+                                                                                                                                                               
+        // Row 4                                                                                                                                              
+        // Shift         xX        cC           dD           vV             zZ                                            Home  Page Up                                          kK             hH           .<           ,>             '"
+        &kp LSHFT        &kp X     &kp C        &kp D        &kp V          &kp Z                                     &kp HOME  &kp PG_UP                                        &kp K          &kp H        &sm_dot_lt   &sm_comma_gt   &kp SQT        &kp RSHFT
+                                                                                                                                                             
+        // Row                                                                                                                            
+        // fn            *`        Caps         Left Arrow   Right Arrow                 Backsp/Spc     Delete/Ent         End  Page Dwn   Enter/Del      Space/Bspc                            Up Arrow     Down Arrow   #@             !^             fn
+        &mo 2            &sm_ast_g &kp CAPS     &kp LEFT     &kp RIGHT               &sm_bspc_space  &sm_del_enter     &kp END  &kp PG_DN  &sm_enter_del  &sm_space_bspc                        &kp UP       &kp DOWN     &sm_hash_at    &sm_bang_caret &mo 2
       >;
     };
 
@@ -185,7 +211,7 @@
         &kp TAB   &kp Q     &kp W    &kp E    &kp R      &kp T  &none                                                             &none &kp Y  &kp KP_N7  &kp KP_N8    &kp KP_N9     &kp KP_MINUS    &kp BSLH
         &kp ESC   &kp A     &kp S    &kp D    &kp F      &kp G  &none           &kp LCTRL &kp LGUI  &kp LALT  &kp RCTRL           &none &kp H  &kp KP_N4  &kp KP_N5    &kp KP_N6     &kp KP_PLUS     &kp SQT
         &kp LSHFT &kp Z     &kp X    &kp C    &kp V      &kp B                            &kp HOME  &kp PG_UP                           &kp N  &kp KP_N1  &kp KP_N2    &kp KP_N3     &kp KP_ENTER    &kp RSHFT
-        &mo 2     &kp GRAVE &kp CAPS &kp LEFT &kp RIGHT                &kp BSPC &kp DEL   &kp END   &kp PG_DN &kp ENTER &kp KP_N0              &kp UP     &kp DOWN     &kp KP_DOT    &kp RBKT        &mo 2
+        &mo 2     &kp GRAVE &kp CAPS &kp LEFT &kp RIGHT                &sm_bspc_space &sm_del_enter &kp END &kp PG_DN &sm_enter_del &kp KP_N0    &kp UP     &kp DOWN     &kp KP_DOT    &kp RBKT        &mo 2
       >;
     };
     fn {
