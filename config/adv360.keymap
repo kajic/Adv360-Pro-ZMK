@@ -181,12 +181,12 @@
         &sm_dollar_tilde &sm_amp_7 &sm_lbrace_5 &sm_lparen_3 &sm_lbracket_1 &sm_equal_0 &tog 1                                                                  &mo 3 &sm_plus_9 &sm_rbracket_2 &sm_rparen_4 &sm_rbrace_6 &sm_percent_8  &kp BSLH
         
         // Row 2        
-        // Tab           qQ        wW           fF           pP             bB          (1)                                                                     (3)   jJ         lL             uU           yY           ;:             /?  
-        &kp TAB          &kp Q     &kp W        &kp F        &kp P          &kp B       &none                                                                   &none &kp J      &kp L          &kp U        &kp Y        &kp SEMI       &kp SLASH
+        // Tab           qQ        wW           fF           pP             bB          (1) Esc                                                                 (3)   jJ         lL             uU           yY           ;:             /?
+        &kp TAB          &kp Q     &kp W        &kp F        &kp P          &kp B       &kp ESC                                                                 &none &kp J      &kp L          &kp U        &kp Y        &kp SEMI       &kp SLASH
         
         // Row 3
-        // Esc           aA        rR           sS           tT             gG          (2)                    Ctrl    Command  Alt        Ctrl                 (4)   mM         nN             eE           iI           oO             -_
-        &kp ESC          &kp A     &kp R        &kp S        &kp T          &kp G       &none             &kp LCTRL   &kp LGUI  &kp LALT   &kp RCTRL            &none &kp M      &kp N          &kp E        &kp I        &kp O          &kp MINUS
+        // Esc           aA        rR           sS           tT             gG          (2) Tab                Ctrl    Command  Alt        Ctrl                 (4)   mM         nN             eE           iI           oO             -_
+        &kp ESC          &kp A     &kp R        &kp S        &kp T          &kp G       &kp TAB           &kp LCTRL   &kp LGUI  &kp LALT   &kp RCTRL            &none &kp M      &kp N          &kp E        &kp I        &kp O          &kp MINUS
                                                                                                                                                                
         // Row 4                                                                                                                                              
         // Shift         xX        cC           dD           vV             zZ                                            Home  Page Up                                          kK             hH           .<           ,>             '"
