@@ -181,12 +181,12 @@
         &sm_dollar_tilde &sm_amp_7 &sm_lbrace_5 &sm_lparen_3 &sm_lbracket_1 &sm_equal_0 &tog 1                                                                  &mo 3 &sm_plus_9 &sm_rbracket_2 &sm_rparen_4 &sm_rbrace_6 &sm_percent_8  &kp BSLH
         
         // Row 2        
-        // Tab           qQ        wW           fF           pP             bB          (1) Esc                                                                 (3)   jJ         lL             uU           yY           ;:             /?
-        &kp TAB          &kp Q     &kp W        &kp F        &kp P          &kp B       &kp ESC                                                                 &none &kp J      &kp L          &kp U        &kp Y        &kp SEMI       &kp SLASH
+        // Disabled      qQ        wW           fF           pP             bB          (1) Esc                                                                 (3)   jJ         lL             uU           yY           ;:             /?
+        &none            &kp Q     &kp W        &kp F        &kp P          &kp B       &kp ESC                                                                 &none &kp J      &kp L          &kp U        &kp Y        &kp SEMI       &kp SLASH
         
         // Row 3
-        // Esc           aA        rR           sS           tT             gG          (2) Tab                Ctrl    Command  Alt        Ctrl                 (4)   mM         nN             eE           iI           oO             -_
-        &kp ESC          &kp A     &kp R        &kp S        &kp T          &kp G       &kp TAB           &kp LCTRL   &kp LGUI  &kp LALT   &kp RCTRL            &none &kp M      &kp N          &kp E        &kp I        &kp O          &kp MINUS
+        // Disabled      aA        rR           sS           tT             gG          (2) Tab                Ctrl    Command  Alt        Ctrl                 (4)   mM         nN             eE           iI           oO             -_
+        &none            &kp A     &kp R        &kp S        &kp T          &kp G       &kp TAB           &kp LCTRL   &kp LGUI  &kp LALT   &kp RCTRL            &none &kp M      &kp N          &kp E        &kp I        &kp O          &kp MINUS
                                                                                                                                                                
         // Row 4                                                                                                                                              
         // Shift         xX        cC           dD           vV             zZ                                            Home  Page Up                                          kK             hH           .<           ,>             '"
@@ -202,8 +202,8 @@
       display-name = "Kp";
       bindings = <
         &kp EQUAL &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &trans                                                            &mo 3 &kp N6 &kp KP_NUM &kp KP_EQUAL &kp KP_DIVIDE &kp KP_MULTIPLY &kp MINUS
-        &kp TAB   &kp Q     &kp W    &kp E    &kp R      &kp T  &none                                                             &none &kp Y  &kp KP_N7  &kp KP_N8    &kp KP_N9     &kp KP_MINUS    &kp BSLH
-        &kp ESC   &kp A     &kp S    &kp D    &kp F      &kp G  &none           &kp LCTRL &kp LGUI  &kp LALT  &kp RCTRL           &none &kp H  &kp KP_N4  &kp KP_N5    &kp KP_N6     &kp KP_PLUS     &kp SQT
+        &trans    &kp Q     &kp W    &kp E    &kp R      &kp T  &trans                                                            &none &kp Y  &kp KP_N7  &kp KP_N8    &kp KP_N9     &kp KP_MINUS    &kp BSLH
+        &trans    &kp A     &kp S    &kp D    &kp F      &kp G  &trans          &kp LCTRL &kp LGUI  &kp LALT  &kp RCTRL           &none &kp H  &kp KP_N4  &kp KP_N5    &kp KP_N6     &kp KP_PLUS     &kp SQT
         &kp LSHFT &kp Z     &kp X    &kp C    &kp V      &kp B                            &kp HOME  &kp PG_UP                           &kp N  &kp KP_N1  &kp KP_N2    &kp KP_N3     &kp KP_ENTER    &kp RSHFT
         &mo 2     &kp GRAVE &kp CAPS &kp LEFT &kp RIGHT                &sm_bspc_space &sm_del_enter &kp END &kp PG_DN &kp ENTER     &kp KP_N0    &kp UP     &kp DOWN     &kp KP_DOT    &kp RBKT        &mo 2
       >;
@@ -212,8 +212,8 @@
       display-name = "Fn";
       bindings = <
         &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6  &tog 1                                          &mo 3 &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12
-        &trans &trans &trans &trans &trans &trans  &none                                           &none &trans &trans &trans &trans  &trans  &trans
-        &trans &trans &trans &trans &trans &trans  &none        &trans &trans &trans &trans        &none &trans &trans &trans &trans  &trans  &trans
+        &trans &trans &trans &trans &trans &trans  &trans                                          &none &trans &trans &trans &trans  &trans  &trans
+        &trans &trans &trans &trans &trans &trans  &trans       &trans &trans &trans &trans        &none &trans &trans &trans &trans  &trans  &trans
         &trans &trans &trans &trans &trans &trans                      &trans &trans                     &trans &trans &trans &trans  &trans  &trans
         &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans &trans              &trans &trans &trans  &trans  &trans
       >;
